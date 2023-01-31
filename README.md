@@ -26,15 +26,15 @@ According to the requested requirements, we develop a flowchart that shows the o
 <a href=</a>   
 <a href=</a>
 <a href=</a>   
-Using Figma we developed the *sketch*, *mockup* and *prototype* of what the web would look like to show who commissioned us and get their approval.
+Using Figma we developed the **sketch**, **mockup** and **prototype** of what the web would look like to show who commissioned us and get their approval.
 ### VUE
 Vue is installed to be able to access its module options, *stores*, *router* and other tools necessary to meet the requested requirements.
 ### HTML Estructure
-Once the prototype was approved and *Vue* installed, the HTML structure necessary to develop the web was developed.
+Once the prototype was approved and **Vue** installed, the HTML structure necessary to develop the web was developed.
 ### SCSS
 The web was customized so that it visually looks like the approved prototype.
 ### JavaScript
-Through *JS* and *Vue*, we develop the necessary functions to meet the requested requirements:
+Through **JS** and **Vue**, we develop the necessary functions to meet the requested requirements:
 - SPA (*Single Page Aplication*)
 - Extern API access
 - *Home Page*, *Dashboard*, *Main list*, *Modify view* and *Add view* section.

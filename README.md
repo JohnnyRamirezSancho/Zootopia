@@ -46,6 +46,7 @@ Through *JS* and *Vue*, we develop the necessary functions to meet the requested
 - JavaScript
 - VUE 3
 - Java
+- SQL
 ### Herramientas
 - Diagrams.net
 - Figma

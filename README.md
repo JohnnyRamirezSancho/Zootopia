@@ -10,9 +10,10 @@ They ask us, among other things:
     - Delete a specimen.
     - Edit an specimen.
 
-
 You should be able to view a list of items.
+
 The list must have pagination. 
+
 The specimens can be filtered according to the family to which it belongs or to the country of origin.
 ## PROYECT PART
 ### User flow

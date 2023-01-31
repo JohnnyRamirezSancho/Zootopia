@@ -1,5 +1,5 @@
 # Proyecto Zootopia
-## PROYECTO
+## PROYECT
 <a href=></a>   
 A nature reserve has asked us for a management system to control its fauna. They ask us, among other things:
 They ask us, among other things:
@@ -9,6 +9,8 @@ They ask us, among other things:
     - Add a new specimen.
     - Delete a specimen.
     - Edit an specimen.
+
+
 You should be able to view a list of items.
 The list must have pagination. 
 The specimens can be filtered according to the family to which it belongs or to the country of origin.

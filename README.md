@@ -54,6 +54,7 @@ Through **JS** and **Vue**, we develop the necessary functions to meet the reque
 - Visual Studio Code
 - VUE 3
 - GitHub
+- MySQL server
 ## EQUIPO
 - [@BryanJPJ](https://github.com/BryanJPJ)
 - [@Diego-Alfredo-González](https://github.com/diegofred10)

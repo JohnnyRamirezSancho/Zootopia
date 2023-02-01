@@ -1,5 +1,5 @@
 # Proyecto Zootopia
-## PROYECT
+## MAIN PROYECT
 
 INSERT IMG 
 

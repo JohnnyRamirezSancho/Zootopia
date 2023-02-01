@@ -1,6 +1,8 @@
 # Proyecto Zootopia
 ## PROYECT
-<a href=></a>   
+
+INSERT IMG 
+
 A nature reserve has asked us for a management system to control its fauna. They ask us, among other things:
 They ask us, among other things:
 - A main view with an access form to the administration area.
@@ -17,15 +19,14 @@ The list must have pagination.
 The specimens can be filtered according to the family to which it belongs or to the country of origin.
 ## PROYECT PART
 ### User flow
-<a href=</a>   
+
+INSERT IMG 
+
 According to the requested requirements, we develop a flowchart that shows the options that the user will have when accessing our site.
 ### *Sketch*, *mockup* y *prototype*.
-<a href=</a>
-<a href=</a>   
-<a href=</a>
-<a href=</a>   
-<a href=</a>
-<a href=</a>   
+
+ INSERT IMG 
+ 
 Using Figma we developed the **sketch**, **mockup** and **prototype** of what the web would look like to show who commissioned us and get their approval.
 ### VUE
 Vue is installed to be able to access its module options, *stores*, *router* and other tools necessary to meet the requested requirements.

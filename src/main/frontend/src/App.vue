@@ -1,18 +1,19 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import DashboardView from './views/DashboardView.vue';
+import AddView from './views/AddView.vue';
 </script>
 
 <template>
   
   <header>
-      <DashboardView/>
+      
     <div class="wrapper">
       
 
       
     </div>
   </header>
+  <AddView/>
 
   <RouterView />
 </template>

@@ -30,4 +30,11 @@ public class SpecimenService {
         return SpecimenSaved;
     }
 
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
+
+    
+    
+
 }

@@ -1,6 +1,6 @@
 package com.zootopia.zootopia.models;
 
-import java.sql.Date;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,9 +22,9 @@ public class Specimen {
     private Long id_gender;
     private Long id_country;
     private Long id_specie;
-    private Date date;
+    private String date;
 
-    public Specimen(Long id, String name, Long id_gender, Long id_country, Long id_specie, Date date) {
+    public Specimen(Long id, String name, Long id_gender, Long id_country, Long id_specie, String date) {
         this.id = id;
         this.name = name;
         this.id_gender = id_gender;
@@ -78,12 +78,14 @@ public class Specimen {
         this.id_specie = id_specie;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
+
+    
 
 }

@@ -1,12 +1,15 @@
 package com.zootopia.zootopia.models;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +23,9 @@ public class Specie {
     @Column(nullable = false)
     private String name;
     private Long id_family;
+    @OneToMany
+    @JoinColumn(name = "id_specie")
+    private List<Specimen> specimen;
     
 
     public Specie(Long id, String name, Long id_family) {

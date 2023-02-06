@@ -1,6 +1,6 @@
 package com.zootopia.zootopia.models;
 
-import java.sql.Date;
+
 import java.util.List;
 
 import javax.persistence.Column;

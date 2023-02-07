@@ -1,7 +1,10 @@
 <script setup>
 import formComp from '../components/FormComponents/formComp.vue';
+import headerComp from '../components/headerComp.vue';
+import footerComp from '../components/footerComp.vue';
 </script>
 <template>
+<headerComp/>
 <main class="container">
     <h1>Add new specimen</h1>
     <div class="d-flex">
@@ -9,6 +12,7 @@ import formComp from '../components/FormComponents/formComp.vue';
         <formComp/>
     </div>
 </main>
+<footerComp/>
 </template>
 <style lang="scss" scoped>
 img{

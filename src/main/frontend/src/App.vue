@@ -5,8 +5,9 @@ import ListView from './views/ListView.vue';
 </script>
 
 <template>
+
   <ListView></ListView>
-  <!-- <header>
+  <header>
       
     <div class="wrapper">
       
@@ -15,7 +16,7 @@ import ListView from './views/ListView.vue';
     </div>
   </header>
 
-  <RouterView /> -->
+  <RouterView />
 </template>
 
 <style scoped>

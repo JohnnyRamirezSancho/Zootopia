@@ -47,7 +47,11 @@ import Alert from'../components/Alert.vue'
 
 section{
  background-image: url(../assets/img/background.jpg);
-//  background-repeat: no-repeat;
+ background-color: rgba(211, 60, 12, 0.5);;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+//  background-size: auto;
+background-position: center;
 
  #bigCard{
     background-color: rgba(211, 60, 12, 0.5);

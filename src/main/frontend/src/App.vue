@@ -4,13 +4,8 @@ import AddView from './views/AddView.vue';
 </script>
 
 <template>
-  
   <header>
-      
     <div class="wrapper">
-      
-
-      
     </div>
   </header>
   <AddView/>

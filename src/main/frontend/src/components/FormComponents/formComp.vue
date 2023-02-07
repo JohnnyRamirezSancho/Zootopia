@@ -9,7 +9,7 @@
   <div class="col-12">
     <label for="inputPassword4" class="form-label">Género</label>
     <select id="inputState" class="form-select">
-      <option selected>Hombre</option>
+      <option selected></option>
       <option>Mujer</option>
       <option>No definido</option>
     </select>
@@ -17,7 +17,7 @@
   <div class="col-12">
     <label for="inputAddress" class="form-label">Familia</label>
     <select id="inputState" class="form-select">
-      <option selected>Félidos</option>
+      <option selected></option>
       <option>Cánidos</option>
       <option>Reptiles</option>
       <option>Mustelids</option>
@@ -27,7 +27,7 @@
   <div class="col-12">
     <label for="inputAddress2" class="form-label">Especie</label>
     <select id="inputState" class="form-select">
-      <option>Leon</option>
+      <option selected></option>
       <option>Zorro</option>
       <option>Serpientes</option>
       <option>Iguanas</option>
@@ -39,7 +39,7 @@
   <div class="col-12">
     <label for="inputCity" class="form-label">País de origen</label>
     <select id="inputState" class="form-select">
-      <option selected>Brasil</option>
+      <option selected></option>
       <option>España</option>
       <option>Canada</option>
       <option>Australia</option>
@@ -48,14 +48,12 @@
   </div>
   <div class="col-12">
     <label for="inputState" class="form-label">Fecha de ingreso</label>
-    <select id="inputState" class="form-select">
-      <option selected>Choose...</option>
-      <option>...</option>
-    </select>
+    <input id="startDate" class="form-control" type="date" />
   </div>
  
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Sign in</button>
+  <div class="col-12 d-flex justify-content-end">
+    <button type="reset" class="btn btn-warning" id="resetBtn">Reset</button>
+    <button type="submit" class="btn btn-success" id="addBtn">Add</button>
   </div>
 </form>
 </template>
@@ -70,6 +68,13 @@
 }
 form{
     font-family: Mont;
+}
+#resetBtn, #addBtn{
+margin-left: 4%;
+width: 8em;
+}
+input, select {
+  border-color: #D33C0C ;
 }
 
 </style>

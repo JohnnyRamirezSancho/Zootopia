@@ -1,22 +1,26 @@
 <script setup>
 
+import { useCountryStore } from '../stores/storeCountries';
+import { onBeforeMount } from 'vue';
+
+const store = useCountryStore();
+
+onBeforeMount(async () => {
+  await store.fetchCountries();
+})
+
 </script>
 
 <template>
-<select id="filter" class="form-select" aria-label="Default select example">
-  <option selected>Países</option>
-  <option value="España">España</option>
-  <option value="Canada">Canada</option>
-  <option value="India">Índia</option>
-  <option value="Australia">Australia</option>
-  <option value="Brasil">Brasil</option>
+<select class="form-select filter" aria-label="Default select example">
+  <option :value="country.id" v-for="country in store.Countries" :key="country">{{ country.name }}</option>
 
 </select>
 
 </template>
 
 <style lang="scss" scoped>
-#filter{
+.filter{
     background-color: #FB8F6E;
     width: 15vw;
     font-family: Mont;

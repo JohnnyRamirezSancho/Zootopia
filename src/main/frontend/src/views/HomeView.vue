@@ -24,7 +24,7 @@ import Alert from'../components/Alert.vue'
             </div>
 
 
-            <button type="button" class="btn btn-success" id="login">Login</button>
+            <button type="button" id="login">Login</button>
 
           </div>
         </div>
@@ -46,12 +46,9 @@ import Alert from'../components/Alert.vue'
 }
 
 section{
- background-image: url(../assets/img/background.jpg);
- background-color: rgba(211, 60, 12, 0.5);;
- background-repeat: no-repeat;
- background-attachment: fixed;
-//  background-size: auto;
-background-position: center;
+ background: url(../assets/img/background.jpg) no-repeat center center fixed;
+ background-size: cover;
+
 
  #bigCard{
     background-color: rgba(211, 60, 12, 0.5);
@@ -69,9 +66,13 @@ background-position: center;
   }
 
   #login{
+    background-color: #28A745;
+    border: none;
     color: black;
-    height: 8vh;
-    width: 5vw;
+    height: 7vh;
+
+    border-radius: 10%;
+
   }
 
   

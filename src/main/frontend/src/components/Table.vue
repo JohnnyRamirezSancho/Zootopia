@@ -8,10 +8,10 @@ import ButtonsList from './ButtonsList.vue';
   <table>
     <thead>
       <tr id="titles">
-        <th class="titles" scope="col">Nombre<br>Género</th>
+        <th id="start" class="titles" scope="col">Nombre<br>Género</th>
         <th class="titles" scope="col">Especie<br>Familia</th>
         <th class="titles" scope="col">País de origen<br>Fecha de ingreso</th>
-        <th></th>
+        <th id="end"></th>
       </tr>
     </thead>
     <tbody>
@@ -100,15 +100,29 @@ padding: 0;
     }
     tbody tr:nth-child(odd) {
       background: #F9DABE;
+      td{
+        padding: 5px 10px ;
+      }
     }
     tbody tr:nth-child(even) {
       background: #fff;
+      td{
+        padding: 5px 10px ;
+      }
     }
     thead {
       background: #D33C0C;
       color: #fff;
       font-size: 18px;
       font-family: Mont;
+
+      #start{
+        border-top-left-radius: 5%;
+      }
+
+      #end{
+        border-top-right-radius: 5%;
+      }
     }
 
   }

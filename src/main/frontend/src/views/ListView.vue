@@ -18,15 +18,17 @@ import Table from '../components/Table.vue';
   <ul class="pagination">
     <li class="page-item">
       <a class="page-link" href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
+        <span id="links" aria-hidden="true">&laquo;</span>
       </a>
     </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" id="links" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" id="links" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" id="links" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" id="links" href="#">4</a></li>
+    <li class="page-item"><a class="page-link" id="links" href="#">5</a></li>
     <li class="page-item">
       <a class="page-link" href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
+        <span id="links" aria-hidden="true">&raquo;</span>
       </a>
     </li>
   </ul>
@@ -53,6 +55,11 @@ import Table from '../components/Table.vue';
   justify-content: center;
   background-color: none;
   color: #D33C0C;
+  margin: 2rem;
+  
+  #links{
+    color: #D33C0C;
+  }
 }
 
 

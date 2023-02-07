@@ -1,24 +1,19 @@
 <script setup>
 import ListView from './views/ListView.vue';
-// import { RouterLink, RouterView } from 'vue-router'
-
+import { RouterLink, RouterView } from 'vue-router'
+import AddView from './views/AddView.vue';
 </script>
 
 <template>
 
   <ListView></ListView>
-  <header>
-      
+  <!-- <header>
     <div class="wrapper">
-      
-
-      
     </div>
   </header>
-
-  <RouterView />
+  <AddView/>
+  <RouterView /> -->
 </template>
 
 <style scoped>
-
 </style>

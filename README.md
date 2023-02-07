@@ -1,4 +1,4 @@
-# Proyecto Zootopia
+# Project Zootopia
 ## MAIN PROYECT
 
 INSERT IMG 
@@ -28,6 +28,7 @@ According to the requested requirements, we develop a flowchart that shows the o
  INSERT IMG 
  
 Using Figma we developed the **sketch**, **mockup** and **prototype** of what the web would look like to show who commissioned us and get their approval.
+
 ### VUE
 Vue is installed to be able to access its module options, *stores*, *router* and other tools necessary to meet the requested requirements.
 ### HTML Estructure

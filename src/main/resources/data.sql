@@ -1,0 +1,26 @@
+INSERT INTO families (id_family, name) VALUES (default, 'Felines')
+INSERT INTO families (id_family, name) VALUES (default, 'Canids')
+INSERT INTO families (id_family, name) VALUES (default, 'Reptiles')
+INSERT INTO families (id_family, name) VALUES (default, 'Leporidae')
+INSERT INTO families (id_family, name) VALUES (default, 'Mustelids')
+
+INSERT INTO species (id_specie, name, id_family) VALUES (default, 'Cat', 1)
+INSERT INTO species (id_specie, name, id_family) VALUES (default, 'Wolf', 2)
+INSERT INTO species (id_specie, name, id_family) VALUES (default, 'Tiger', 1)
+INSERT INTO species (id_specie, name, id_family) VALUES (default, 'Lizard', 3)
+INSERT INTO species (id_specie, name, id_family) VALUES (default, 'Rabbit', 4)
+INSERT INTO species (id_specie, name, id_family) VALUES (default, 'Otter', 5)
+
+INSERT INTO genders (id_gender, name) VALUES (default, 'Male')
+INSERT INTO genders (id_gender, name) VALUES (default, 'Female')
+
+INSERT INTO countries (id_country, name) VALUES (default, 'Spain')
+INSERT INTO countries (id_country, name) VALUES (default, 'Australia')
+INSERT INTO countries (id_country, name) VALUES (default, 'Italy')
+
+INSERT INTO specimens (id_specimen, id_specie, id_gender, id_country, name, date) VALUES (default, 1, 1, 1, 'Felix', '2023-01-01')
+INSERT INTO specimens (id_specimen, id_specie, id_gender, id_country, name, date) VALUES (default, 2, 2, 1, 'Raksha', '2023-01-02')
+INSERT INTO specimens (id_specimen, id_specie, id_gender, id_country, name, date) VALUES (default, 3, 1, 2, 'Shere Khan', '2023-01-03')
+INSERT INTO specimens (id_specimen, id_specie, id_gender, id_country, name, date) VALUES (default, 4, 2, 1, 'Godzilla', '2023-01-04')
+INSERT INTO specimens (id_specimen, id_specie, id_gender, id_country, name, date) VALUES (default, 5, 1, 3, 'Thumper', '2023-01-05')
+INSERT INTO specimens (id_specimen, id_specie, id_gender, id_country, name, date) VALUES (default, 6, 2, 2, 'Emmitt', '2023-01-01')

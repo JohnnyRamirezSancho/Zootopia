@@ -5,6 +5,7 @@ import Table from '../components/Table.vue';
 </script>
 
 <template>
+<main>
 <div id="filter">
     <FilterFamily></FilterFamily>
     <FilterCountries></FilterCountries>
@@ -31,7 +32,7 @@ import Table from '../components/Table.vue';
   </ul>
 </nav>
 </div>
-
+</main>
 </template>
 
 <style lang="scss" scoped>

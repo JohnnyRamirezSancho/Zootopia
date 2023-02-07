@@ -5,7 +5,8 @@ import AddView from './views/AddView.vue';
 </script>
 
 <template>
-  <ListView></ListView>
+
+  <RouterView />
 </template>
 
 <style scoped>

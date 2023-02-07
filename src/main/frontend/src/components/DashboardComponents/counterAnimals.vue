@@ -1,7 +1,7 @@
 <script>
 </script>
 <template>
-<div class="card mb-3 mt-2"  id="counter">
+<div class="card mb-5 mt-2"  id="counter">
   <div class="card-body p-0">
     <table>
   <thead>
@@ -21,11 +21,13 @@
 }
 #title{
     font-size: 2em;
-    padding-right: 1em;
+    padding-right: 2em;
+    padding-left: 2em;
     color: #D33C0C;
 }
 #number{
     font-size: 2em;
+    font-style: italic;
     padding-left: 1em;
     padding-right: 1em;
     background-color: #D33C0C;

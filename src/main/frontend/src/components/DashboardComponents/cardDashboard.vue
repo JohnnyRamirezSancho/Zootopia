@@ -1,7 +1,7 @@
 <script setup>
 </script>
 <template>
-<div class="card mb-3 mt-2"  id="cardComponent">
+<div class="card "  id="cardComponent">
   <div class="card-body p-0 overflow-auto">
     <table>
   <thead>
@@ -12,28 +12,28 @@
   </thead>
   <tbody>
     <tr>
-      <td>Gatos</td>
-      <td>12</td>
+      <td class="ps-4">Gatos</td>
+      <td class="text-end pe-4">12</td>
     </tr>
     <tr>
-      <td>Centro comercial</td>
-      <td>Francisco Chang</td>
+      <td class="ps-4">Leopardos</td>
+      <td class="text-end pe-4">6</td>
     </tr>
     <tr>
-      <td>Ernst Handel</td>
-      <td>Roland Mendel</td>
+      <td class="ps-4">Leones</td>
+      <td class="text-end pe-4">7</td>
     </tr>
     <tr>
-      <td>Island Trading</td>
-      <td>Helen Bennett</td>
+      <td class="ps-4">Linces</td>
+      <td class="text-end pe-4">9</td>
     </tr>
     <tr>
-      <td>Laughing Bacchus</td>
-      <td>Yoshi Tannamuri</td>
+      <td class="ps-4">Jaguares</td>
+      <td class="text-end pe-4">30</td>
     </tr>
     <tr>
-      <td>Magazzini Alimentari</td>
-      <td>Giovanni Rovelli</td>
+      <td class="ps-4">Pumas</td>
+      <td class="text-end pe-4">17</td>
     </tr>
   </tbody>
 </table>
@@ -51,6 +51,7 @@
 #family{
   color: #D33C0C;
   font-size:2em;
+  padding: 0.4em;
 }
 #recountNumb{
   background-color: #D33C0C;
@@ -58,6 +59,7 @@
   font-size: 1.5em;
   text-align: center;
   font-style: italic;
+  border-top-right-radius: 10px;
 }
 table tbody tr:nth-child(odd) {
 	background: #F9DABE;
@@ -69,5 +71,9 @@ table tbody tr:nth-child(even) {
 table {
   border-collapse: collapse;
   width: 100%;
+}
+td{
+  font-weight: bold;
+  padding: 0.4em;
 }
 </style>

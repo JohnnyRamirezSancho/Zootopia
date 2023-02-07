@@ -43,12 +43,12 @@ Through **JS** and **Vue**, we develop the necessary functions to meet the reque
 - In addition, the possibility of being able to show the complete file of each element downloaded from the API is included.
 ##  LANGUAGES AND TOOLS USED
 ### Languages
-- HTML
-- SCSS
-- JavaScript
-- VUE 3
-- Java
-- SQL
+- HTML.
+- SCSS.
+- JavaScript.
+- VUE 3.
+- Java.
+- SQL.
 ### Herramientas
 - Diagrams.net
 - Figma

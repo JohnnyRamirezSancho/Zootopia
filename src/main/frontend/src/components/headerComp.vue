@@ -1,9 +1,9 @@
 <script setup>
-
+import { RouterLink } from 'vue-router';
 </script>
 <template>
     <header>
-<nav class="navbar navbar-expand-md navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img src="../assets/img/title1.png" alt="this is title">
@@ -15,9 +15,9 @@
     </button>
 
 <div class="collapse navbar-collapse" id="opciones">   
-         <button class="ms-4">DASHBOARD</button>
-          <button class="ms-4">MAIN LIST</button>
-          <button class="ms-4">ADD NEW SPECIMEN</button>
+         <button class="m-4"><RouterLink to="/Dashboard">Dashboard</RouterLink></button>
+          <button class="m-4"><RouterLink to="/ListView">LIST</RouterLink></button>
+          <button class="m-4"><RouterLink to="/AddView"> NEW SPECIMEN</RouterLink></button>
     </div>
     
 </nav>

@@ -5,12 +5,6 @@ import AddView from './views/AddView.vue';
 </script>
 
 <template>
-  <ListView></ListView>
-  <header>
-    <div class="wrapper">
-    </div>
-  </header>
-  <AddView/>
   <RouterView />
 </template>
 

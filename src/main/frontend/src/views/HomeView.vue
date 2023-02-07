@@ -70,7 +70,6 @@ section{
     border: none;
     color: black;
     height: 7vh;
-
     border-radius: 10%;
 
   }

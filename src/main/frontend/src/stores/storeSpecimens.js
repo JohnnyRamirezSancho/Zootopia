@@ -1,18 +1,18 @@
 import { defineStore } from "pinia";
 
-export const useFamilyStore = defineStore({
-  id: "Families",
+export const useSpecimenStore = defineStore({
+  id: "Specimens",
   state: () => ({
-    Families: [],
+    Specimens: [],
   }),
   actions: {
-    async fetchFamilies() {
+    async fetchSpecimens() {
       const response = await fetch(
-        "http://localhost:8080/api/families"
+        "http://localhost:8080/api/specimens"
       );
       const data = await response.json();
 
-      this.Families = data;
+      this.Specimens = data;
 
      
     

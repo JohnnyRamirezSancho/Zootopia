@@ -1,4 +1,4 @@
-<script setup>
+<script setup> 
 
 import { useCountryStore } from '../stores/storeCountries';
 import { onBeforeMount } from 'vue';

@@ -1,5 +1,14 @@
 <script setup>
-import ButtonsList from './ButtonsList.vue';
+import { useSpecimenStore } from '../stores/storeSpecimens';
+
+import { onBeforeMount } from 'vue';
+
+const store = useSpecimenStore();
+
+onBeforeMount(async () => {
+  await store.fetchSpecimens();
+  console.log(store.Specimens);
+})
 </script>
 
 <template>
@@ -8,72 +17,18 @@ import ButtonsList from './ButtonsList.vue';
   <table>
     <thead>
       <tr id="titles">
-        <th id="start" class="titles" scope="col">Nombre<br>Género</th>
-        <th class="titles" scope="col">Especie<br>Familia</th>
-        <th class="titles" scope="col">País de origen<br>Fecha de ingreso</th>
-        <th id="end"></th>
+        <th id="start" class="titles" scope="col"><p>name</p><p>Specie</p><p>Country</p><p>Gender</p><p>Family</p><p>Date of Admission</p></th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Félix<br>Macho</td>
-        <td>Pantera negra<br>Felino</td>
-        <td>España<br>01/01/2023</td>
-        <td><ButtonsList></ButtonsList></td>
-      </tr>
-      <tr>
-        <td>Flora<br>Hembra</td>
-        <td>Tigre blanco<br>Felino</td>
-        <td>Índia<br>02/01/2023</td>
-        <td><ButtonsList></ButtonsList></td>
-      </tr>
-      <tr>
-        <td>Félix<br>Macho</td>
-        <td>Pantera negra<br>Felino</td>
-        <td>España<br>01/01/2023</td>
-        <td><ButtonsList></ButtonsList></td>
-      </tr>
-      <tr>
-        <td>Flora<br>Hembra</td>
-        <td>Tigre blanco<br>Felino</td>
-        <td>Índia<br>02/01/2023 </td>
-        <td><ButtonsList></ButtonsList></td>
-      </tr>
-      <tr>
-        <td>Félix<br>Macho</td>
-        <td>Pantera negra<br>Felino</td>
-        <td>España<br>01/01/2023</td>
-        <td><ButtonsList></ButtonsList></td>
-      </tr>
-      <tr>
-        <td>Flora<br>Hembra</td>
-        <td>Tigre blanco<br>Felino</td>
-        <td>Índia<br>02/01/2023 </td>
-        <td><ButtonsList></ButtonsList></td>
-      </tr>
-      <tr>
-        <td>Félix<br>Macho</td>
-        <td>Pantera negra<br>Felino</td>
-        <td>España<br>01/01/2023</td>
-        <td><ButtonsList></ButtonsList></td>
-      </tr>
-      <tr>
-        <td>Flora<br>Hembra</td>
-        <td>Tigre blanco<br>Felino</td>
-        <td>Índia<br>02/01/2023 </td>
-        <td><ButtonsList></ButtonsList></td>
-      </tr>
-      <tr>
-        <td>Félix<br>Macho</td>
-        <td>Pantera negra<br>Felino</td>
-        <td>España<br>01/01/2023</td>
-        <td><ButtonsList></ButtonsList></td>
-      </tr>
-      <tr>
-        <td>Flora<br>Hembra</td>
-        <td>Tigre blanco<br>Felino</td>
-        <td>Índia<br>02/01/2023 </td>
-        <td><ButtonsList></ButtonsList></td>
+      <tr v-for="specimen in store.Specimens" :key="specimen">
+      <td><p>{{ specimen.name }}</p>
+        <p>{{ specimen.specie }}</p>
+        <p>{{ specimen.id_country }}</p>
+        <p>{{ specimen.id_gender }}</p>
+        <p>family</p>
+        <p>{{ specimen.date }}</p>
+      </td>
       </tr>
     </tbody>
   </table>
@@ -101,6 +56,8 @@ padding: 0;
     tbody tr:nth-child(odd) {
       background: #F9DABE;
       td{
+        display: grid;
+        grid-column: 1fr 1fr 1fr;
         padding: 5px 10px ;
       }
     }

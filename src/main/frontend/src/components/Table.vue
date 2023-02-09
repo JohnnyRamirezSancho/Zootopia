@@ -1,130 +1,150 @@
 <script setup>
-import ButtonsList from './ButtonsList.vue';
+import { useSpecimenStore } from "../stores/storeSpecimens";
+import { useFamilyStore } from "../stores/storeFamilies";
+import { useSpecieStore } from "../stores/storeSpecies";
+import { useGenderStore } from "../stores/storeGenders";
+import { useCountryStore } from "../stores/storeCountries";
+
+import { onBeforeMount } from "vue";
+
+const store = useSpecimenStore();
+const storeFamily = useFamilyStore();
+const storeSpecie = useSpecieStore();
+const storeGender = useGenderStore();
+const storeCountry = useCountryStore();
+
+onBeforeMount(async () => {
+  await store.fetchSpecimens();
+  await storeFamily.fetchFamilies();
+  await storeSpecie.fetchSpecies();
+  await storeGender.fetchGenders();
+  await storeCountry.fetchCountries();
+});
+
+function returnGenderName(idGender) {
+  let gender = storeGender.Genders.filter(function (gender) {
+    return gender.id == idGender;
+  });
+  let genderName = gender[0].name;
+  return genderName;
+}
+
 </script>
 
 <template>
-
-<div id="bigDiv" class="container">
-  <table>
-    <thead>
-      <tr id="titles">
-        <th id="start" class="titles" scope="col">Nombre<br>Género</th>
-        <th class="titles" scope="col">Especie<br>Familia</th>
-        <th class="titles" scope="col">País de origen<br>Fecha de ingreso</th>
-        <th id="end"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Félix<br>Macho</td>
-        <td>Pantera negra<br>Felino</td>
-        <td>España<br>01/01/2023</td>
-        <td><ButtonsList></ButtonsList></td>
-      </tr>
-      <tr>
-        <td>Flora<br>Hembra</td>
-        <td>Tigre blanco<br>Felino</td>
-        <td>Índia<br>02/01/2023</td>
-        <td><ButtonsList></ButtonsList></td>
-      </tr>
-      <tr>
-        <td>Félix<br>Macho</td>
-        <td>Pantera negra<br>Felino</td>
-        <td>España<br>01/01/2023</td>
-        <td><ButtonsList></ButtonsList></td>
-      </tr>
-      <tr>
-        <td>Flora<br>Hembra</td>
-        <td>Tigre blanco<br>Felino</td>
-        <td>Índia<br>02/01/2023 </td>
-        <td><ButtonsList></ButtonsList></td>
-      </tr>
-      <tr>
-        <td>Félix<br>Macho</td>
-        <td>Pantera negra<br>Felino</td>
-        <td>España<br>01/01/2023</td>
-        <td><ButtonsList></ButtonsList></td>
-      </tr>
-      <tr>
-        <td>Flora<br>Hembra</td>
-        <td>Tigre blanco<br>Felino</td>
-        <td>Índia<br>02/01/2023 </td>
-        <td><ButtonsList></ButtonsList></td>
-      </tr>
-      <tr>
-        <td>Félix<br>Macho</td>
-        <td>Pantera negra<br>Felino</td>
-        <td>España<br>01/01/2023</td>
-        <td><ButtonsList></ButtonsList></td>
-      </tr>
-      <tr>
-        <td>Flora<br>Hembra</td>
-        <td>Tigre blanco<br>Felino</td>
-        <td>Índia<br>02/01/2023 </td>
-        <td><ButtonsList></ButtonsList></td>
-      </tr>
-      <tr>
-        <td>Félix<br>Macho</td>
-        <td>Pantera negra<br>Felino</td>
-        <td>España<br>01/01/2023</td>
-        <td><ButtonsList></ButtonsList></td>
-      </tr>
-      <tr>
-        <td>Flora<br>Hembra</td>
-        <td>Tigre blanco<br>Felino</td>
-        <td>Índia<br>02/01/2023 </td>
-        <td><ButtonsList></ButtonsList></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+  <div id="bigDiv">
+    <table>
+      <thead>
+        <tr id="titles">
+          <th id="start" class="titles" scope="col">
+            <p>Name</p>
+            <p>Specie</p>
+            <p>Country</p>
+            <p>Gender</p>
+            <p>Family</p>
+            <p>Date of Admission</p>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="specimen in store.Specimens" :key="specimen">
+          <td>
+            <p>{{ specimen.name }}</p>
+            <p>{{ specimen.id_specie }}</p>
+            <p>{{ returnGenderName(specimen.id_gender) }}</p>
+            <p>{{ specimen.id_specie }}</p>
+            <p>{{ specimen.date }}</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <style lang="scss" scoped>
-#bigDiv{
-border:  1px solid #D33C0C;
-border-radius: 10px;
-width: 90vw;
-padding: 0;
+#bigDiv {
+  border: 1px solid #d33c0c;
+  border-radius: 10px;
+  padding: 0;
+  width: 100%;
+  margin: 0;
 
   table {
     border-collapse: collapse;
     width: 100%;
 
-    #titles{
+    #titles {
       border-radius: 10% 10% 0 0;
     }
     .titles {
-      padding: 5px 10px ;
+      padding: 5px 10px;
     }
     tbody tr:nth-child(odd) {
-      background: #F9DABE;
-      td{
-        padding: 5px 10px ;
+      background: #f9dabe;
+      transition: all 0.4s;
+      border-radius: 10px;
+      td {
+        display: grid;
+        column-gap: 10px;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 5px 10px;
+        border-radius: 10px;
+        p {
+          margin-bottom: 0;
+        }
+        p:nth-child(n + 4) {
+          font-style: oblique;
+        }
       }
     }
+    tbody tr:nth-child(odd):hover {
+      background: #ccc;
+      transform: scale(1.05);
+      font-weight: bold;
+    }
+
     tbody tr:nth-child(even) {
       background: #fff;
-      td{
-        padding: 5px 10px ;
+      transition: all 0.4s;
+      border-radius: 10px;
+      td {
+        display: grid;
+        column-gap: 10px;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 5px 10px;
+        border-radius: 10px;
+        p {
+          margin-bottom: 0;
+        }
+        p:nth-child(n + 4) {
+          font-style: oblique;
+        }
       }
     }
+    tbody tr:nth-child(even):hover {
+      background: #ccc;
+      transform: scale(1.05);
+      font-weight: bold;
+    }
     thead {
-      background: #D33C0C;
+      background: #d33c0c;
       color: #fff;
       font-size: 18px;
       font-family: Mont;
-
-      #start{
-        border-top-left-radius: 5%;
-      }
-
-      #end{
-        border-top-right-radius: 5%;
+      border-radius: 5%;
+      th {
+        display: grid;
+        column-gap: 10px;
+        grid-template-columns: 1fr 1fr 1fr;
+        border-radius: 5%;
+        p {
+          margin-bottom: 0;
+        }
+        p:nth-child(n + 4) {
+          font-style: oblique;
+        }
       }
     }
-
   }
 }
 </style>

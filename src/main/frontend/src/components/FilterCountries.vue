@@ -27,5 +27,3 @@ onBeforeMount(async () => {
     font-family: Mont;
 }
 
-
-</style>

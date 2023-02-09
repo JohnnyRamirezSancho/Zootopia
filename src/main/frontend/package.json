@@ -1,17 +1,17 @@
 {
-  "name": "frontend",
+  "name": "vue-project",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build-ghpages": "vite build --base=/Support-App-My-first-CRUD/",
     "preview": "vite preview",
-    "test:unit": "vitest --environment jsdom --root src/"
+    "test:unit": "vitest --environment jsdom"
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
     "pinia": "^2.0.28",
-    "sass": "^1.58.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },
@@ -19,6 +19,7 @@
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/test-utils": "^2.2.6",
     "jsdom": "^20.0.3",
+    "sass": "^1.57.1",
     "vite": "^4.0.0",
     "vitest": "^0.25.6"
   }

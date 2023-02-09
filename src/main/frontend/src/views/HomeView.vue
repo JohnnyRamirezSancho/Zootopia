@@ -54,9 +54,15 @@ function validate(){
             <div class="form-outline mb-4">
               <input type="text" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Usuario"/>
             </div>
-
             <div class="form-outline mb-4">
-              <input type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="Contraseña" />
+                <input
+                  type="password"
+                  id="typePasswordX-2"
+                  class="form-control form-control-lg"
+                  placeholder="Password"
+                />
+                <label class="form-label" for="typePasswordX-2"></label>
+              </div>
             </div>
             <input type="submit" name="" value="Login" @click="validate()"/>
           </form>

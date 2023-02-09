@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 export const useFamilyStore = defineStore({
   id: "Families",
   state: () => ({
-    Countries: [],
+    Families: [],
   }),
   actions: {
     async fetchFamilies() {

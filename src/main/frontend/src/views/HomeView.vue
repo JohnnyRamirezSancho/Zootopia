@@ -1,5 +1,46 @@
 <script setup>
 import Alert from'../components/Alert.vue'
+import { useUserStore } from '../stores/storeUser';
+import { onBeforeMount } from 'vue';
+
+const store = useUserStore();
+
+onBeforeMount(async () => {
+  await store.fetchUsers();
+  console.log(store.Users);
+})
+
+onBeforeMount(async () => {
+  await store.fetchUsers();
+
+
+})
+
+
+//the next script checks user and passwords for login
+
+function validate(){
+  let mostrarBryan = store.Users[1].user;
+  console.log(mostrarBryan.user);
+  let mostrarBryanPass = store.Users[1].password;
+  console.log(mostrarBryanPass.password);
+  let mostrarGiacomo = store.Users[0];
+  console.log(mostrarGiacomo.user);
+  let mostrarJohnny = store.Users[2];
+  console.log(mostrarJohnny.user);
+  let mostrarVito = store.Users[3];
+  console.log(mostrarVito.user);
+
+  const username = document.getElementById("typeEmailX-2").value;
+  const password = document.getElementById("typePasswordX-2").value;
+  if(username == mostrarBryan && password == mostrarBryanPass){
+    location.href="/Dashboard"
+  } 
+  else {
+    alert(mostrarBryan)
+  }
+}
+
 </script>
 
 <template>
@@ -12,20 +53,18 @@ import Alert from'../components/Alert.vue'
           <div class="card-body p-5 text-center">
 
             <h3 class="mb-5">WELCOME TO ZOOTOPIA COMMUNITY</h3>
-
+            <form>
             <div class="form-outline mb-4">
-              <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Usuario"/>
-              <label class="form-label" for="typeEmailX-2"></label>
+              <input type="text" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Usuario"/>
+              <!-- <label class="form-label" for="typeEmailX-2" :value="user.user" v-for="user in store.Users" :key="user"><p>{{ user.name }}</p></label> -->
             </div>
 
             <div class="form-outline mb-4">
               <input type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="Contraseña" />
-              <label class="form-label" for="typePasswordX-2" ></label>
+              <!-- <label class="form-label" for="typePasswordX-2" ></label> -->
             </div>
-
-
-            <button type="button" id="login">Login</button>
-
+            <input type="submit" name="" value="Login" @click="validate()"/>
+          </form>
           </div>
         </div>
       </div>

@@ -2,43 +2,35 @@
 import Alert from'../components/Alert.vue'
 import { useUserStore } from '../stores/storeUser';
 import { onBeforeMount } from 'vue';
+import { useRouter } from 'vue-router';
 
 const store = useUserStore();
 
 onBeforeMount(async () => {
   await store.fetchUsers();
-  console.log(store.Users);
 })
 
-onBeforeMount(async () => {
-  await store.fetchUsers();
-
-
-})
-
-
-//the next script checks user and passwords for login
 
 function validate(){
   let mostrarBryan = store.Users[1].user;
   let mostrarBryanPass = store.Users[1].password;
 
-
   const username = document.getElementById("typeEmailX-2").value;
   const password = document.getElementById("typePasswordX-2").value;
   if(username == mostrarBryan && password == mostrarBryanPass){
-    // location.href="/Dashboard"
-    alert("BIEN")
+    location.href="/Dashboard"
   } 
   else {
-    alert("AQUI VA EL ALERT DE VITO")
+    goVisible();
   }
 }
-
+function goVisible(){
+  document.getElementById("alert").classList.remove("invisible")
+}
 </script>
 
 <template>
-  <Alert></Alert>
+  <Alert/>
   <section class="vh-100">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -64,7 +56,7 @@ function validate(){
                 <label class="form-label" for="typePasswordX-2"></label>
               </div>
             </div>
-            <input type="submit" name="" value="Login" @click="validate()"/>
+            <input type="button" name="" value="Login" @click="validate()"/>
           </form>
           </div>
         </div>

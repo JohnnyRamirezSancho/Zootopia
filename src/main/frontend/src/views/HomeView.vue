@@ -23,13 +23,15 @@ function validate(){
   let mostrarBryan = store.Users[1].user;
   let mostrarBryanPass = store.Users[1].password;
 
+
   const username = document.getElementById("typeEmailX-2").value;
   const password = document.getElementById("typePasswordX-2").value;
   if(username == mostrarBryan && password == mostrarBryanPass){
-    location.href="/Dashboard"
+    // location.href="/Dashboard"
+    alert("BIEN")
   } 
   else {
-    alert(mostrarBryan)
+    alert("AQUI VA EL ALERT DE VITO")
   }
 }
 

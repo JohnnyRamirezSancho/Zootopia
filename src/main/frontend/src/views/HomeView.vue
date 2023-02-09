@@ -21,7 +21,7 @@ import Alert from "../components/Alert.vue";
                   type="email"
                   id="typeEmailX-2"
                   class="form-control form-control-lg"
-                  placeholder="Usur"
+                  placeholder="User"
                 />
                 <label class="form-label" for="typeEmailX-2"></label>
               </div>

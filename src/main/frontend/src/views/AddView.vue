@@ -1,5 +1,5 @@
 <script setup>
-import formComp from '../components/FormComponents/formComp.vue';
+import formComp from '../components/FormComponents/formAddComp.vue';
 import headerComp from '../components/headerComp.vue';
 import footerComp from '../components/footerComp.vue';
 </script>

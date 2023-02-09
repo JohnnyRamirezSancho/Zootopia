@@ -2,7 +2,7 @@
 
 const props = defineProps({
 totalSpecimens: {
-    type: String,
+    type: Number,
     default: null
   }
 })

@@ -54,7 +54,7 @@ function goVisible(){
                   placeholder="Password"
                 />
                 <label class="form-label" for="typePasswordX-2"></label>
-              </div>
+              
             </div>
             <input type="button" name="" value="Login" @click="validate()"/>
           </form>

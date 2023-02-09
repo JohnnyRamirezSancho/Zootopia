@@ -1,5 +1,40 @@
 <script setup>
-import Alert from "../components/Alert.vue";
+import Alert from'../components/Alert.vue'
+import { useUserStore } from '../stores/storeUser';
+import { onBeforeMount } from 'vue';
+
+const store = useUserStore();
+
+onBeforeMount(async () => {
+  await store.fetchUsers();
+  console.log(store.Users);
+})
+
+onBeforeMount(async () => {
+  await store.fetchUsers();
+
+
+})
+
+
+//the next script checks user and passwords for login
+
+function validate(){
+  let mostrarBryan = store.Users[1].user;
+  let mostrarBryanPass = store.Users[1].password;
+
+
+  const username = document.getElementById("typeEmailX-2").value;
+  const password = document.getElementById("typePasswordX-2").value;
+  if(username == mostrarBryan && password == mostrarBryanPass){
+    // location.href="/Dashboard"
+    alert("BIEN")
+  } 
+  else {
+    alert("AQUI VA EL ALERT DE VITO")
+  }
+}
+
 </script>
 
 <template>
@@ -15,18 +50,11 @@ import Alert from "../components/Alert.vue";
           >
             <div class="card-body p-5 text-center">
               <h3 class="mb-5">WELCOME TO ZOOTOPIA COMMUNITY</h3>
-
-              <div class="form-outline mb-4">
-                <input
-                  type="email"
-                  id="typeEmailX-2"
-                  class="form-control form-control-lg"
-                  placeholder="User"
-                />
-                <label class="form-label" for="typeEmailX-2"></label>
-              </div>
-
-              <div class="form-outline mb-4">
+            <form>
+            <div class="form-outline mb-4">
+              <input type="text" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Usuario"/>
+            </div>
+            <div class="form-outline mb-4">
                 <input
                   type="password"
                   id="typePasswordX-2"
@@ -35,12 +63,13 @@ import Alert from "../components/Alert.vue";
                 />
                 <label class="form-label" for="typePasswordX-2"></label>
               </div>
-
-              <button type="button" id="login">Login</button>
             </div>
+            <input type="submit" name="" value="Login" @click="validate()"/>
+          </form>
           </div>
         </div>
       </div>
+    </div>
     </div>
   </section>
 </template>

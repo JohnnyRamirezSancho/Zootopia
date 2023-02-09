@@ -24,3 +24,8 @@ INSERT INTO specimens (id_specimen, id_specie, id_gender, id_country, name, date
 INSERT INTO specimens (id_specimen, id_specie, id_gender, id_country, name, date) VALUES (default, 4, 2, 1, 'Godzilla', '2023-01-04')
 INSERT INTO specimens (id_specimen, id_specie, id_gender, id_country, name, date) VALUES (default, 5, 1, 3, 'Thumper', '2023-01-05')
 INSERT INTO specimens (id_specimen, id_specie, id_gender, id_country, name, date) VALUES (default, 6, 2, 2, 'Emmitt', '2023-01-01')
+
+INSERT INTO users (id_user, password, user) VALUES (default, "12345678", "Giacomo")
+INSERT INTO users (id_user, password, user) VALUES (default, "bryan", "Bryan")
+INSERT INTO users (id_user, password, user) VALUES (default, "johnny", "Johnny")
+INSERT INTO users (id_user, password, user) VALUES (default, "vitodiego", "Vitodiego")

@@ -29,36 +29,6 @@ function returnGenderName(idGender) {
   return genderName;
 }
 
-function returnSpecieName(idSpecie) {
-  let specie = storeSpecie.Species.filter(function (specie) {
-    return specie.id == idSpecie;
-  });
-  let specieName = specie[0].name;
-  return specieName;
-}
-
-
-function returnCountryName(idCountry) {
-  let country = storeCountry.Countries.filter(function (country) {
-    return country.id == idCountry;
-  });
-  let countryName = country[0].name;
-  return countryName;
-}
-
-function returnFamilyName(idSpecie) {
-  let specie = storeSpecie.Species.filter(function (specie) {
-    return specie.id == idSpecie;
-  });
-  let familyId = specie[0].id_family;
-  let family = storeFamily.Families.filter(function (family) {
-    return family.id == familyId;
-  });
-  let familyName = family[0].name;
-  return familyName;
-
-  
-}
 </script>
 
 <template>
@@ -80,10 +50,9 @@ function returnFamilyName(idSpecie) {
         <tr v-for="specimen in store.Specimens" :key="specimen">
           <td>
             <p>{{ specimen.name }}</p>
-            <p>{{ returnSpecieName(specimen.id_specie) }}</p>
-            <p>{{ returnCountryName(specimen.id_country) }}</p>
+            <p>{{ specimen.id_specie }}</p>
             <p>{{ returnGenderName(specimen.id_gender) }}</p>
-            <p>{{ returnFamilyName(specimen.id_specie) }}</p>
+            <p>{{ specimen.id_specie }}</p>
             <p>{{ specimen.date }}</p>
           </td>
         </tr>

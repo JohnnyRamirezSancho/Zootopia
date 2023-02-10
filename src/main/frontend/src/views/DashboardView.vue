@@ -10,12 +10,10 @@ import { onBeforeMount } from "vue";
 
 const store = useSpecimenStore();
 const storeFamily = useFamilyStore();
-
 onBeforeMount(async () => {
   await store.fetchSpecimens();
   await storeFamily.fetchFamilies();
 });
-
 function totalSpecimens() {
   return store.Specimens.length;
 }
@@ -24,9 +22,11 @@ function totalSpecimens() {
   <HeaderComp />
   <main class="container">
     <div class="d-flex justify-content-center">
+    
       <counterAnimals :totalSpecimens="totalSpecimens()" />
     </div>
     <div class="d-flex justify-content-around flex-wrap gap-5">
+   
      <cardDashboard v-for="family in storeFamily.Families" :key="family" :familyId="family.id"/>
     </div>
   </main>

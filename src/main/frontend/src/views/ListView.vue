@@ -1,6 +1,4 @@
 <script setup>
-import FilterFamily from "../components/FilterFamily.vue";
-import FilterCountries from "../components/FilterCountries.vue";
 import Table from "../components/Table.vue";
 import headerComp from "../components/headerComp.vue";
 import footerComp from "../components/footerComp.vue";
@@ -9,10 +7,7 @@ import footerComp from "../components/footerComp.vue";
 <template>
   <headerComp />
   <main>
-    <div id="filter">
-      <FilterFamily></FilterFamily>
-      <FilterCountries></FilterCountries>
-    </div>
+
     <Table></Table>
     
   </main>

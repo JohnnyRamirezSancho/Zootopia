@@ -1,27 +1,23 @@
 <script setup>
-// import { useFamilyStore } from "../../stores/storeFamilies";
-// // import { onBeforeMount } from "vue";
-
-// const storeFamily = useFamilyStore();
-
-// onBeforeMount(async () => {
-//   await storeFamily.fetchFamilies();
-// });
-
-// const props = defineProps({
-//   familyId: {
-//     type: Number,
-//     default: 1
-//   }
-// })
-
-// function returnFamilyName(idFamily) {
-//   let family = storeFamily.Families.filter(function (family) {
-//     return family.id == idFamily;
-//   });
-//   let familyName = family[0].name;
-//   return familyName;
-// }
+import { useFamilyStore } from "../../stores/storeFamilies";
+import { onBeforeMount } from "vue";
+const storeFamily = useFamilyStore();
+onBeforeMount(async () => {
+  await storeFamily.fetchFamilies();
+});
+const props = defineProps({
+  familyId: {
+    type: Number,
+    default: 1
+  }
+})
+function returnFamilyName(idFamily) {
+  let family = storeFamily.Families.filter(function (family) {
+    return family.id == idFamily;
+  });
+  let familyName = family[0].name;
+  return familyName;
+}
 </script>
 
 <template>
@@ -30,7 +26,7 @@
       <table>
         <thead>
           <tr>
-            <th id="family">X</th>
+            <th id="family">{{ returnFamilyName(familyId) }}</th>
             <th id="recountNumb">14</th>
           </tr>
         </thead>

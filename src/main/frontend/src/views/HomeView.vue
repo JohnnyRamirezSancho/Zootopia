@@ -40,27 +40,22 @@ function goVisible(){
             id="bigCard"
             style="border-radius: 1rem"
           >
-          <form>
             <div class="card-body p-5 text-center">
               <h3 class="mb-5">WELCOME TO ZOOTOPIA COMMUNITY</h3>
+            <form>
             <div class="form-outline mb-4">
               <input type="text" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Usuario"/>
             </div>
+
             <div class="form-outline mb-4">
-                <input
-                  type="password"
-                  id="typePasswordX-2"
-                  class="form-control form-control-lg"
-                  placeholder="Password"
-                />
-                <label class="form-label" for="typePasswordX-2"></label>
-              </div>
+              <input type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="Contraseña" />
             </div>
             <input type="button" name="" value="Login" @click="validate()"/>
           </form>
           </div>
         </div>
       </div>
+    </div>
     </div>
   </section>
 </template>

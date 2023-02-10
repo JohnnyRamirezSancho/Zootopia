@@ -26,4 +26,6 @@ onBeforeMount(async () => {
     width: 15vw;
     font-family: Mont;
 }
+
+
 </style>

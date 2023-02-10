@@ -59,6 +59,7 @@ function returnFamilyName(idSpecie) {
 
   
 }
+
 </script>
 
 <template>

@@ -1,7 +1,5 @@
 package com.zootopia.zootopia.models;
 
-
-
 import java.util.List;
 
 import javax.persistence.Column;
@@ -27,7 +25,6 @@ public class Country {
     @JoinColumn(name = "id_country")
     private List<Specimen> specimen;
     
-
     public Country(Long id, String name) {
         this.id = id;
         this.name = name;
@@ -37,7 +34,6 @@ public class Country {
     public Country() {
         
     }
-
 
     public Long getId() {
         return id;

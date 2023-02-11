@@ -14,6 +14,7 @@ onBeforeMount(async () => {
   await store.fetchSpecimens();
   await storeFamily.fetchFamilies();
 });
+
 function totalSpecimens() {
   return store.Specimens.length;
 }
@@ -27,7 +28,7 @@ function totalSpecimens() {
     </div>
     <div class="d-flex justify-content-around flex-wrap gap-5">
    
-     <cardDashboard v-for="family in storeFamily.Families" :key="family" :familyId="family.id"/>
+     <cardDashboard v-for="family in storeFamily.Families" :familyId="family.id"/>
     </div>
   </main>
   <FooterComp />

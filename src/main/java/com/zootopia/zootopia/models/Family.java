@@ -1,7 +1,6 @@
 package com.zootopia.zootopia.models;
 
-
-    import java.util.List;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,12 +27,10 @@ public class Family {
 
     public Family(Long id, String name) {
         this.id = id;
-        this.name = name;
-        
+        this.name = name;        
     }
 
     public Family() {
-        
     }
 
     public Long getId() {

@@ -1,23 +1,66 @@
 <script setup>
 import { useFamilyStore } from "../../stores/storeFamilies";
+import { useSpecieStore } from "../../stores/storeSpecies"
+import { useSpecimenStore } from "../../stores/storeSpecimens"
 import { onBeforeMount } from "vue";
+
+const store = useSpecimenStore();
 const storeFamily = useFamilyStore();
+const storeSpecie = useSpecieStore();
 onBeforeMount(async () => {
+  await store.fetchSpecimens();
   await storeFamily.fetchFamilies();
+  await storeSpecie.fetchSpecies();
 });
+
 const props = defineProps({
   familyId: {
     type: Number,
     default: 1
   }
 })
-function returnFamilyName(idFamily) {
+
+function returnFamilyName(familyId) {
   let family = storeFamily.Families.filter(function (family) {
-    return family.id == idFamily;
+    return family.id == familyId;
   });
   let familyName = family[0].name;
   return familyName;
 }
+
+function returnFamilyCount(familyId) {
+  let specie = storeSpecie.Species.filter(function (specie) {
+    return specie.id_family == familyId;
+  });
+  
+  let count = 0;
+  specie.forEach(specieItem => {
+    let specimenBySpecie = store.Specimens.filter(function (specimenBySpecie) {
+      return specimenBySpecie.id_specie == specieItem.id;
+    });
+    let specimensItems = specimenBySpecie.length;
+    console.log(specimensItems);
+    count += specimensItems;
+  });
+  return count;
+  };
+
+function returnSpecieByFamily(familyId) {
+  let specieByFamily = storeSpecie.Species.filter(function (specieByFamily) {
+    return specieByFamily.id_family == familyId;
+  });
+  return specieByFamily;
+}
+
+function returnSpecieCount(specieId) {
+  let specimenBySpecie = store.Specimens.filter(function (specimenBySpecie) {
+    return specimenBySpecie.id_specie == specieId;
+  });
+  let specieCount = specimenBySpecie.length;
+  return specieCount;
+}
+
+
 </script>
 
 <template>
@@ -27,33 +70,13 @@ function returnFamilyName(idFamily) {
         <thead>
           <tr>
             <th id="family">{{ returnFamilyName(familyId) }}</th>
-            <th id="recountNumb">14</th>
+            <th id="recountNumb">{{ returnFamilyCount(familyId) }}</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="ps-4">Gatos</td>
-            <td class="text-end pe-4">12</td>
-          </tr>
-          <tr>
-            <td class="ps-4">Leopardos</td>
-            <td class="text-end pe-4">6</td>
-          </tr>
-          <tr>
-            <td class="ps-4">Leones</td>
-            <td class="text-end pe-4">7</td>
-          </tr>
-          <tr>
-            <td class="ps-4">Linces</td>
-            <td class="text-end pe-4">9</td>
-          </tr>
-          <tr>
-            <td class="ps-4">Jaguares</td>
-            <td class="text-end pe-4">30</td>
-          </tr>
-          <tr>
-            <td class="ps-4">Pumas</td>
-            <td class="text-end pe-4">17</td>
+          <tr v-for="specie in returnSpecieByFamily(familyId)">
+            <td class="ps-4">{{ specie.name }}</td>
+            <td class="text-end pe-4">{{ returnSpecieCount(specie.id) }}</td>
           </tr>
         </tbody>
       </table>
